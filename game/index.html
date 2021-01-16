@@ -162,8 +162,13 @@ function increaseTime() {
     document.getElementById('intro').play()
   }
 }
-setTimeout(document.getElementById('intro').play(), 10);
-setInterval(document.getElementById('intro').play(), 189)
+setTimeout(startSong(), 10);
+setInterval(startSong(), 189);
+function startSong() {
+  stopSongs();
+  document.getElementById('intro').play();
+}
+    
 function createInsect() {
   const insect = document.createElement(
   'div')
