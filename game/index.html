@@ -159,6 +159,7 @@ function increaseTime() {
   if (seconds > 30) {
     screens[2].classList.add('up')
     finalscore.innerHTML = `Score: ${score}`
+    document.getElementById('intro').play()
   }
 }
 setTimeout(document.getElementById('intro').play(), 10);
