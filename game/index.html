@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset = "UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
 
   
   <link rel="stylesheet" href = "https://steverhee3.github.io/clickthefruit/game/styles.css">
@@ -56,6 +57,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
     var key;
+    var scrollEventHandler = function()
+{
+  window.scroll(0, window.pageYOffset)
+}
+
+window.addEventListener("scroll", scrollEventHandler, false);
     document.getElementById('intro').loop = true; 
     const sounds = ['intro', 'fruit'];
 const screens = document.querySelectorAll('.screen');
@@ -158,7 +165,7 @@ function increaseTime() {
   s = s < 10 ? `0${s}` : s
   timeEl.innerHTML = `Time: ${m}:${s}`
   seconds++
-  if (seconds > 30) {
+  if (seconds > 20) {
     screens[2].classList.add('up')
     finalscore.innerHTML = `Score: ${score}`
     document.getElementById('intro').play()
